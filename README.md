@@ -1,18 +1,59 @@
-# SANITRON - Sanitization Robot for Train Compartments
+📦 Project Motivation
+Traditional cleaning in railway compartments often leads to inconsistent sanitation, which increases the risk of disease transmission. With rising public health concerns, especially post-COVID, there's a strong need for smarter and safer sanitation solutions. SANITRON addresses this by introducing automation into the sanitization process—reducing human effort while improving reliability.
 
-## 📅 Duration
-March 2024 – July 2024
+⚙️ System Architecture
+SANITRON consists of the following major components:
 
-## 🧠 Summary
-This project proposes the development of a sanitization robot designed to tackle the health risks associated with disease transmission in crowded train compartments. The robot, named **SANITRON**, autonomously navigates using ultrasonic and passive infrared sensors for obstacle detection. An Arduino microcontroller manages its operations, and motor drivers regulate the application of sanitizer.
+ESP32 – Main controller handling logic and connectivity
 
-Feedback mechanisms help adjust the robot’s speed and direction in response to obstacles, ensuring effective sanitization without manual intervention.
+ESP32-CAM – Captures real-time footage for monitoring
 
-## 🎯 Goal
-To improve cleanliness in train compartments, ensuring passenger safety by reducing the risk of disease transmission using automation.
+PIR Sensor – Detects human presence to pause spraying
 
-## 🛠️ Skills Used
-- AutoCAD  
-- Internet of Things (IoT)  
-- Arduino IDE  
-- Report Writing
+Ultrasonic Mist Maker – Converts sanitizer into fine mist
+
+Motor Driver (L298N) – Drives 4-wheel motion
+
+Servo Motors (SG90) – Controls movement of spray arms
+
+Blynk App – For remote manual control and monitoring
+
+🔁 Operating Flow
+Bot is placed at the start of the train coach
+
+Powers on, connects to Wi-Fi, and links to Blynk
+
+Uses PIR sensor to detect people and stop misting
+
+Moves through the compartment while spraying sanitizer
+
+Sends live video feed using ESP32-CAM
+
+Can be manually controlled via Blynk if needed
+
+🧠 Key Highlights
+Uses mist-based sanitization to avoid slippery surfaces
+
+Enables remote monitoring and override
+
+Fully mobile using side shaft motors and BO motors
+
+Low-cost and easy to replicate using off-the-shelf components
+
+🧪 Challenges Faced
+Balancing power between motors and misting system
+
+Handling Wi-Fi dropout in large compartments
+
+Fine-tuning the sensitivity of motion detection
+
+Ensuring stability while spraying and moving
+
+🛠 Future Work
+Implement autonomous path planning
+
+Add obstacle mapping with IR or LIDAR
+
+Build a custom mobile app instead of Blynk
+
+Improve battery backup and add solar charging option
